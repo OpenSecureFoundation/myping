@@ -1,0 +1,11 @@
+Ce fichier donne les étapes a suivre pour l'éxécution du programme :
+
+
+1. Allez dans le dossier "Code". Ce dossier contient notre code. Il est preferable de copier l'integralité de ce dossier dans un autre dossier pour eviter toute confussion après que le code est été compilé.
+
+2. Utilisez la commande "sudo make" pour lancer la compilation du code
+
+3. Une fois la compilation terminé, utilsez la commande "sudo ./myping google.com" pour effectuer un ping vers le serveur google. Vous pouvez remplacer "google.com" par un autre nom de domaine ou par une adresse IP. 
+
+
+NB : LA SYNTAXE DE NOTRE PROGRAMME "myping" RESPECTE CEUX DE LA COMMANDE PING QUE NOUS CONNAISSONS TOUS
