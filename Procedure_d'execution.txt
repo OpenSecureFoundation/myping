@@ -1,11 +1,53 @@
-Ce fichier donne les étapes a suivre pour l'éxécution du programme :
+__ MYPING : IMPLEMENTATION DE LA COMMANDE PING __
+
+# DESCRIPTION
+---
+
+Ce programme est une implémentation de la commande "ping". Il permet d'envoyer des paquets ICMP (Echo Request) à une destination spécifiée (adresse IP ou nom de domaine) et d'afficher les temps de réponse, les pertes de paquets, ainsi que des statistiques détaillées.
+
+---
 
 
-1. Allez dans le dossier "Code". Ce dossier contient notre code. Il est preferable de copier l'integralité de ce dossier dans un autre dossier pour eviter toute confussion après que le code est été compilé.
+# PREREQUIS
 
-2. Utilisez la commande "sudo make" pour lancer la compilation du code
+## Système d'exploitation
+**Linux uniquement** (Ubuntu, Debian, Fedora, Arch Linux, etc.)
 
-3. Une fois la compilation terminé, utilsez la commande "sudo ./myping google.com" pour effectuer un ping vers le serveur google. Vous pouvez remplacer "google.com" par un autre nom de domaine ou par une adresse IP. 
+## Paquets nécessaires
+### Compilateur C
+gcc --version    # Vérifier si GCC est installé
+
+*** Si GCC n'est pas installé :
+sudo apt install gcc         # Ubuntu/Debian
+sudo dnf install gcc         # Fedora
+sudo pacman -S gcc           # Arch Linux
+
+### Make (généralement déjà installé)
+make --version   # Vérifier si Make est installé
+
+*** Si Make n'est pas installé :
+sudo apt install make        # Ubuntu/Debian
+sudo dnf install make        # Fedora
+sudo pacman -S make          # Arch Linux
 
 
-NB : LA SYNTAXE DE NOTRE PROGRAMME "myping" RESPECTE CEUX DE LA COMMANDE PING QUE NOUS CONNAISSONS TOUS
+# COMPILATION
+
+* Assure-toi que le fichier Makefile est présent dans le dossier courant : ls -l Makefile
+* Ouvre un terminal dans le dossier du projet et exécute : make
+* Après la compilation, tu dois voir l'exécutable myping : ls -l myping
+
+# EXECUTION
+
+* Le programme doit être exécuté avec sudo 
+	Syntaxe générale : sudo ./myping [options] <destination>
+
+ 	Exemple 1 : Ping simple vers Google 
+		sudo ./myping google.com
+	
+	Exemple 2 : Envoyer exactement 4 paquets
+		sudo ./myping -c 4 192.168.154.5
+
+	Exemple 3 : Définir un TTL spécifique
+		sudo ./myping -t 64 google.com
+
